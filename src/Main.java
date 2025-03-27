@@ -1,4 +1,4 @@
-/*public class Main {
+public class Main {
     public static void main(String[] args) {
 // Create an instance of the computer store
         ComputerStore store = new ComputerStore();
@@ -30,13 +30,13 @@
         customer1.setFirstName("John");
         customer1.setLastName("Smith");
         customer1.setEmail("john.smith@example.com");
-        customer1.setIsLoyalCustomer(true);
+        customer1.setLoyalCustomer(true);
         Customer customer2 = new Customer();
         customer2.setId(2);
         customer2.setFirstName("Anna");
         customer2.setLastName("Brown");
         customer2.setEmail("anna.brown@example.com");
-        customer2.setIsLoyalCustomer(false);
+        customer2.setLoyalCustomer(false);
         store.addCustomer(customer1);
         store.addCustomer(customer2);
 // Create orders
@@ -65,4 +65,3 @@
         store.displayCustomerOrders(1);
     }
 }
- */

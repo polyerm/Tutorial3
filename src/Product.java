@@ -4,12 +4,17 @@ public class Product {
     private String category;
     private double price;
     private int stockQuantity;
+
     public Product( int id, String name, String category, double price, int stockQuantity ) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
         this.stockQuantity = stockQuantity;
+    }
+
+    public Product() {
+
     }
 
     public int getId() {

@@ -1,7 +1,7 @@
 public class Order {
     private int id;
     private Customer customer;
-    private Product[] products;
+    private Product[] product;
     private int[] quantities;
     private String orderDate;
     private String status;
@@ -9,10 +9,10 @@ public class Order {
     public Order(int id, Customer customer, Product[] products, int[] quantities, String orderDate, String status) {
         this.id = id;
         this.customer = customer;
-        this.products = products;
+        this.product = products;
         this.quantities = quantities;
         this.orderDate = orderDate;
-        this.status = "In Progress";
+        this.status = status;
     }
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Order {
     }
 
     public Product[] getProducts() {
-        return products;
+        return product;
     }
 
     public void setProducts(Product[] products) {
-        this.products = products;
+        this.product = products;
     }
 
     public int[] getQuantities() {
@@ -65,26 +65,26 @@ public class Order {
 
     public double calculateTotalValue() {
         double total = 0;
-        for (int i = 0; i < products.length; i++) {
-            total += products[i].getPrice() * quantities[i];
+        for (int i = 0; i < product.length; i++) {
+            total = total + product[i].getPrice() * quantities[i];
         }
         return total;
     }
-    public void applyDiscount() {
+
+    public double applyDiscount() {
+        double total = calculateTotalValue();
         if (customer.isLoyalCustomer()) {
-            double discount = calculateTotalValue() * 0.10;
+            total *= 0.9;
         }
+        return total;
     }
 
-public void displayDetails() {
-    System.out.println("Order ID: " + id);
-    System.out.println("Customer: " + customer.getFirstName() + " " + customer.getLastName());
-    System.out.println("Order Date: " + orderDate);
-    System.out.println("Status: " + status);
-    System.out.println("Products:");
-    for (int i = 0; i < products.length; i++) {
-        System.out.println("- " + products[i].getName() + " (Quantity: " + quantities[i] + ")");
+    public void displayDetails() {
+        System.out.println("ID: " + id);
+        System.out.println("Customer: " + customer.getFirstName());
+        System.out.println("Quantity: " + quantities[0]);
+        System.out.println("Order Date: " + orderDate);
+        System.out.println("Status: " + status);
+        System.out.println("Total Value: " + applyDiscount());
     }
-    System.out.println("Total Value: " + calculateTotalValue());
-  }
 }
