@@ -78,7 +78,6 @@ public class Order {
         }
         return total;
     }
-
     public void displayDetails() {
         System.out.println("ID: " + id);
         System.out.println("Customer: " + customer.getFirstName());

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class ComputerStore {
     private ArrayList<Product> products = new ArrayList<>();
     private ArrayList<Customer> customers = new ArrayList<>();

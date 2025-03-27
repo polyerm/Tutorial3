@@ -12,11 +12,9 @@ public class Product {
         this.price = price;
         this.stockQuantity = stockQuantity;
     }
-
     public Product() {
 
     }
-
     public int getId() {
         return id;
     }

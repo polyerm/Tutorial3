@@ -11,11 +11,9 @@ public class Customer {
         this.email = email;
         this.isLoyalCustomer = isLoyalCustomer;
     }
-
     public Customer() {
 
     }
-
     public int getId() {
         return id;
     }
